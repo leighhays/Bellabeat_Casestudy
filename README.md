@@ -5,4 +5,5 @@
 Google Data Analytics Capstone Projects
 By:  Leigh Hays
 
-
+I have a version of this saved on Kaggle as well.
+https://www.kaggle.com/code/leighhays/bellabeat-capstone-project/edit/run/96586275
