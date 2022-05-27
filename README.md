@@ -480,7 +480,7 @@ After reviewing the data, I will present my recommendations on how Bellabeat can
 <h2>Observations</h2>
 
 * The data we were working with is from 2016, from an Amazon Mechanical Turk survey. It might be best to gather more recent data to make sure our findings are current.
-* It appears that many FitBit users do not wear their device consistently, so having a reminder might help users to remmember to wear them more often.
+* It appears that many FitBit users do not wear their device consistently, so having a reminder might help users to remember to wear them more often.
 * They could have rewards similar to the Apple watch, that helps motivate you to reach milestones.
 * There was a lot of sedentary time in this group, The CDC recommends 30 minutes of activity each day. That is why having a reminder on the device would help motivate users to stay more active.
 * It appears that many users were wearing the device in bed, but not asleep. This is most likely due to using their phone before going to bed. So, they might want to set screen time limitations, so their sleep is not negatively effected by blue light before going to sleep.
