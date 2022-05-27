@@ -7,16 +7,20 @@ By:  Leigh Hays
 
 Bellabeat Case Study
 How Can a Wellness Technology Company Play It Smart?
-R - FitBit Fitness Tracker Data
 
-Unknown-2.png
+R - <a href = " https://kaggle.com/arashnic/fitbit">FitBit Tracker Data)</a>
 
-Summary
-Company Background
+
+<h2> Summary</h2>
+
+<h3>Company Background</h3>
+
 Bellabeat is a tech-driven wellness company for women founded in 2013, that manufactures health-focused smart products that are beautifully designed to inform and inspire women around the world. Bellabeat technology is developed to Collect data on various health activities, sleep, stress, and reproductive health, which has allowed women to be empowered with the knowledge about their own health and habits.
 
-Ask
-Business Task
+# Ask
+
+<h3> Business Task</h3>
+
 As a junior data analyst working on the marketing analyst team at Bellabeat, I have been asked to analyze data from non-Bellabeat(FitBit) smart devices usage, in order to gain insight into how consumers are using these smart devices. These insights will help guide the marketing strategy for the company.
 
 Key Stakeholders
