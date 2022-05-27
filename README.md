@@ -486,6 +486,7 @@ After reviewing the data, I will present my recommendations on how Bellabeat can
 * It appears that many users were wearing the device in bed, but not asleep. This is most likely due to using their phone before going to bed. So, they might want to set screen time limitations, so their sleep is not negatively effected by blue light before going to sleep.
 
 <h2>Marketing Suggestions for Bellabeat</h2>
+
 * Bellabeat can create a podcast or blog that talks about healthy lifestyle and the importance of daily exercise.
 * They could have monthly incentives for meeting milestones for their users, such as free swag, or a discount towards one of their products.
 * They could send a monthly newsletter with tips on how to become more active and even include healthy recipes to encourage a healthier lifestyle.
@@ -493,4 +494,5 @@ After reviewing the data, I will present my recommendations on how Bellabeat can
 <h3> References </h3>
 
 * Data Source:  https://www.kaggle.com/code/leighhays/bellabeat-capstone-project/data?scriptVersionId=96701939
-* Articles:
+* Articles: https://www.livestrong.com/article/401892-what-are-sedentary-moderate-high-activity-exercise-levels/
+* CDC Physical Activity Guidelines - https://www.cdc.gov/physicalactivity/basics/adults/index.htm
