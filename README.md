@@ -1,14 +1,14 @@
 
 ![Unknown-2](https://user-images.githubusercontent.com/68507597/170092857-305d880f-ea2e-4774-bc8d-e6bee2b2bc5b.png)
 
-# Bellabeat_Casestudy
-Google Data Analytics Capstone Projects
-By:  Leigh Hays
+# Bellabeat Casestudy
+<h2>Google Data Analytics Capstone Projects</h2>
+<h3>By:  Leigh Hays</h3>
 
 Bellabeat Case Study
 How Can a Wellness Technology Company Play It Smart?
 
-R - <a href = " https://kaggle.com/arashnic/fitbit">FitBit Tracker Data)</a>
+R - <a href = "https://kaggle.com/arashnic/fitbit">FitBit Tracker Data</a>
 
 
 <h2> Summary</h2>
@@ -23,26 +23,35 @@ Bellabeat is a tech-driven wellness company for women founded in 2013, that manu
 
 As a junior data analyst working on the marketing analyst team at Bellabeat, I have been asked to analyze data from non-Bellabeat(FitBit) smart devices usage, in order to gain insight into how consumers are using these smart devices. These insights will help guide the marketing strategy for the company.
 
-Key Stakeholders
-Urška Sršen: Bellabeat’s co-founder and Chief Creative Officer
-Sando Mur: Mathematician and Bellabeat’s co-founder; key member of the Bellabeat executive team
-Marketing analytics team: A team of data analysts responsible for guiding Bellabeat’s marketing strategy.
-Prepare
-Data Source
+<h3> Key Stakeholders</h3>
+    
+* Urška Sršen:  Bellabeat’s co-founder and Chief Creative Officer
+* Sando Mur: Mathematician and Bellabeat’s co-founder; key member of the Bellabeat executive team
+* Marketing analytics team: A team of data analysts responsible for guiding Bellabeat’s marketing strategy.
+    
+# Prepare
+    
+<h3>Data Source</h3>
+    
 The data provided to us by Bellabeat's cofounder is the FitBit Fitness Tracker Dataset, which is a public domain made available through Mobius. The dataset is also available on Kaggle: https://kaggle.com/arashnic/fitbit
 
-Is the Data ROCCC(Reliable, Original, Comprehensive, Current, and Cited)?
-Reliable- - The dataset only has 30 participants with no additional information on gender, age, or lifestyle.
-Original- - The data was collected from Amazon Mechanical Turk.
-Comprehensive-There is some missing information due to all users not wearing FitBit for 30 days
-Current-The data was collected in 2016. Since there have been many changes since then, it might be useful to gather more recent data for future projects
-Cited- Unknown since this was 3rd party data
+<h3>Is the Data ROCCC(Reliable, Original, Comprehensive, Current, and Cited)?</h3>
+
+* Reliable- - The dataset only has 30 participants with no additional information on gender, age, or lifestyle.
+* Original- - The data was collected from Amazon Mechanical Turk.
+* Comprehensive-There is some missing information due to all users not wearing FitBit for 30 days
+* Current-The data was collected in 2016. Since there have been many changes since then, it might be useful to gather more recent data for future projects
+* Cited- Unknown since this was 3rd party data
+
 # Process
+
 Due to the size of the data sets, I will be using R Programming language to create data visualizations to share with stakeholders
 
-Installing R Packages
+<h3>Installing R Packages</h3>
+
 In order to process the data in R, we will need to install the necessary packages
 
+```
 library(tidyverse) 
 library(here) 
 library(skimr)
@@ -54,6 +63,7 @@ library(corrplot)
 library(tidyr)
 library(stats)
 library(ggplot2)
+```
 ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
 
 ✔ ggplot2 3.3.5     ✔ purrr   0.3.4
@@ -87,12 +97,16 @@ The following objects are masked from ‘package:base’:
 
 corrplot 0.92 loaded
 
-Importing Datasets
+<h3>Importing Datasets</h3>
+
 I will be focusing solely on Activity, Sleep, and Weight for this analysis. Activity data includes information about the number of steps taken and calories burned.
 
+```
 daily_activity <- read_csv(file= "../input/fitbit/Fitabase Data 4.12.16-5.12.16/dailyActivity_merged.csv") 
 sleep_day <- read.csv(file= "../input/fitbit/Fitabase Data 4.12.16-5.12.16/sleepDay_merged.csv")
 weight_data <- read.csv(file= "../input/fitbit/Fitabase Data 4.12.16-5.12.16/weightLogInfo_merged.csv")
+```
+
 Rows: 940 Columns: 15
 ── Column specification ────────────────────────────────────────────────────────
 Delimiter: ","
@@ -101,10 +115,14 @@ dbl (14): Id, TotalSteps, TotalDistance, TrackerDistance, LoggedActivitiesDi...
 
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-Data Exploration
+
+<h3>Data Exploration</h3>
+
 I will use the glimpse() and head() function to examine the data more closely.
 
+```
 glimpse(daily_activity)
+
 Rows: 940
 Columns: 15
 $ Id                       <dbl> 1503960366, 1503960366, 1503960366, 150396036…
@@ -122,6 +140,8 @@ $ FairlyActiveMinutes      <dbl> 13, 19, 11, 34, 10, 20, 16, 31, 12, 8, 27, 21�
 $ LightlyActiveMinutes     <dbl> 328, 217, 181, 209, 221, 164, 233, 264, 205, …
 $ SedentaryMinutes         <dbl> 728, 776, 1218, 726, 773, 539, 1149, 775, 818…
 $ Calories                 <dbl> 1985, 1797, 1776, 1745, 1863, 1728, 1921, 203…
+
+
 head(daily_activity)
 A tibble: 6 × 15
 Id	ActivityDate	TotalSteps	TotalDistance	TrackerDistance	LoggedActivitiesDistance	VeryActiveDistance	ModeratelyActiveDistance	LightActiveDistance	SedentaryActiveDistance	VeryActiveMinutes	FairlyActiveMinutes	LightlyActiveMinutes	SedentaryMinutes	Calories
@@ -172,12 +192,16 @@ Id	Date	WeightKg	WeightPounds	Fat	BMI	IsManualReport	LogId
 4	2873212765	4/21/2016 11:59:59 PM	56.7	125.0021	NA	21.45	True	1.461283e+12
 5	2873212765	5/12/2016 11:59:59 PM	57.3	126.3249	NA	21.69	True	1.463098e+12
 6	4319703577	4/17/2016 11:59:59 PM	72.4	159.6147	25	27.45	True	1.460938e+12
-Analyze
+
+```
+# Analyze
 I will analyze the data further to make sure it is consistent and formatted correctly.
 
-Data Summary
+<h3> Data Summary</h3>
+
 Next I will check to see the number of rows in each dataset
 
+```
 nrow(daily_activity)
 nrow(sleep_day)
 nrow(weight_data)
@@ -198,16 +222,22 @@ sum(duplicated(weight_data))
 0
 3
 0
-Observations
+```
+<h3> Observations</h3>
+
 From a quick scan of the loaded datasets the following quick observation were made
 
-The id column is common in all 3 datasets, and can be used to merge the datasets
-The data type of the Date variable in the 3 datasets are currently character variables and needs to be converted to Date format.
-The sleep_data and the weight_data have both date and time merged in one column and need to be be separated, as only the date variable will be used for the analysis.
-There were 33 unique users who logged in their daily activities, however, only 24 and 8 unique users logged sleep data and weight data respectively. This implies that most of these users used the device to log their daily activities, but not all of the users track their weight and sleeping habits with the device. 5.There appears to be no duplicate data in the daily_activity and weight_data, however the sleep_data has 3 duplicates, which need to be removed
-Data Cleaning Steps
+* The id column is common in all 3 datasets, and can be used to merge the datasets
+* The data type of the Date variable in the 3 datasets are currently character variables and needs to be converted to Date format.
+* The sleep_data and the weight_data have both date and time merged in one column and need to be be separated, as only the date variable will be used for the analysis.
+* There were 33 unique users who logged in their daily activities, however, only 24 and 8 unique users logged sleep data and weight data respectively. This implies that most of these users used the device to log their daily activities, but not all of the users track their weight and sleeping habits with the device. 
+* There appears to be no duplicate data in the daily_activity and weight_data, however the sleep_data has 3 duplicates, which need to be removed
+
+<h3>Data Cleaning Steps</h3>
+
 Will format the column names to lowercase for consistency, and change some of the column names as well
 
+```
 # Clean column names to lower case
 daily_activity <- clean_names(daily_activity)
 sleep_day <- clean_names(sleep_day)
@@ -318,10 +348,17 @@ id	date	total_steps	total_distance	tracker_distance	logged_activities_distance	v
 4	1503960366	2016-04-15	9762	6.28	6.28	0	2.14	1.26	2.83	0	29	34	209	726	1745	Friday	1	412	442	Friday
 5	1503960366	2016-04-16	12669	8.16	8.16	0	2.71	0.41	5.04	0	36	10	221	773	1863	Saturday	2	340	367	Saturday
 6	1503960366	2016-04-17	9705	6.48	6.48	0	3.19	0.78	2.51	0	38	20	164	539	1728	Sunday	1	700	712	Sunday
-Share
+
+```
+
+
+# Share
+
 Now I will create some visualizations to share some key insights.
 
-Visualizations
+<h2>Visualizations</h2>
+
+```
 head(combined_data)
 A data.frame: 6 × 20
 id	date	total_steps	total_distance	tracker_distance	logged_activities_distance	very_active_distance	moderately_active_distance	light_active_distance	sedentary_active_distance	very_active_minutes	fairly_active_minutes	lightly_active_minutes	sedentary_minutes	calories	weekday.x	total_sleep_records	total_minutes_asleep	total_time_in_bed	weekday.y
@@ -332,22 +369,39 @@ id	date	total_steps	total_distance	tracker_distance	logged_activities_distance	v
 4	1503960366	2016-04-15	9762	6.28	6.28	0	2.14	1.26	2.83	0	29	34	209	726	1745	Friday	1	412	442	Friday
 5	1503960366	2016-04-16	12669	8.16	8.16	0	2.71	0.41	5.04	0	36	10	221	773	1863	Saturday	2	340	367	Saturday
 6	1503960366	2016-04-17	9705	6.48	6.48	0	3.19	0.78	2.51	0	38	20	164	539	1728	Sunday	1	700	712	Sunday
+```
 Scatter plot to show the time in bed vs time asleep
+
+```
 ggplot(data=sleep_day, aes(x=total_minutes_asleep, y=total_time_in_bed)) + geom_point(aes(color=date))
+```
+![image](https://user-images.githubusercontent.com/68507597/170605595-71382ba8-29e4-47ca-abe7-ee8afe2a092d.png)
+
 
 Scatter plot to show the sedentary minutes vs total steps
+
+```
 ggplot(data=daily_activity, aes(x=total_steps, y=sedentary_minutes, color = calories)) + geom_point()
+```
+![image](https://user-images.githubusercontent.com/68507597/170605687-6f3b1701-3550-4235-a645-40a0a626e1d0.png)
 
 Graph to show the tracker distance usage for each day of the week
+
+```
 ggplot(data = combined_data, aes( x = weekday.x, y = tracker_distance, fill = weekday.x)) + 
   geom_bar(stat = "identity")
+  ```
+  ![image](https://user-images.githubusercontent.com/68507597/170605716-cb01683b-8c2a-4da6-a22d-b996cdfdf71a.png)
+
 
 The dataset did not include any demographic information about the users. We can classify the users by activity considering the daily amount of steps. We can categorize users as follows: I used this article as a reference to determine how to categorize them. https://www.livestrong.com/article/401892-what-are-sedentary-moderate-high-activity-exercise-levels/
 
-Sedentary - Less than 5000 steps a day.
-Lightly active - Between 5000 and 7499 steps a day.
-Fairly active - Between 7500 and 9999 steps a day.
-Very active - More than 10000 steps a day.
+* Sedentary - Less than 5000 steps a day.
+* Lightly active - Between 5000 and 7499 steps a day.
+* Fairly active - Between 7500 and 9999 steps a day.
+* Very active - More than 10000 steps a day.
+
+```
 daily_average <- combined_data %>%
   group_by(id) %>%
   summarise (mean_daily_steps = mean(total_steps), mean_daily_calories = mean(calories), mean_daily_sleep = mean(total_minutes_asleep))
@@ -416,17 +470,27 @@ user_category_percent %>%
   geom_text(aes(label = labels),
             position = position_stack(vjust = 0.5))+
   labs(title="User Category distribution")
+  
+  ```
+![image](https://user-images.githubusercontent.com/68507597/170605758-90b93a5d-974d-4563-9b51-8f0a5969b61b.png)
 
-Act
+# Act
 After reviewing the data, I will present my recommendations on how Bellabeat can use these insights to improve their Marketing stategies.
 
-Observations
+<h2>Observations</h2>
 
-The data we were working with is from 2016, from an Amazon Mechanical Turk survey. It might be best to gather more recent data to make sure our findings are current.
-It appears that many FitBit users do not wear their device consistently, so having a reminder might help users to remmember to wear them more often.
-They could have rewards similar to the Apple watch, that helps motivate you to reach milestones.
-There was a lot of sedentary time in this group, The CDC recommends 30 minutes of activity each day. That is why having a reminder on the device would help motivate users to stay more active.
-It appears that many users were wearing the device in bed, but not asleep. This is most likely due to using their phone before going to bed. So, they might want to set screen time limitations, so their sleep is not negatively effected by blue light before going to sleep.
-Marketing Suggestions for Bellabeat
-Bellabeat can create a podcast or blog that talks about healthy lifestyle and the importance of daily exercise.
-They could have monthly incentives for meeting milestones for their users, such as free swag, or a discount towards one of their products.
+* The data we were working with is from 2016, from an Amazon Mechanical Turk survey. It might be best to gather more recent data to make sure our findings are current.
+* It appears that many FitBit users do not wear their device consistently, so having a reminder might help users to remmember to wear them more often.
+* They could have rewards similar to the Apple watch, that helps motivate you to reach milestones.
+* There was a lot of sedentary time in this group, The CDC recommends 30 minutes of activity each day. That is why having a reminder on the device would help motivate users to stay more active.
+* It appears that many users were wearing the device in bed, but not asleep. This is most likely due to using their phone before going to bed. So, they might want to set screen time limitations, so their sleep is not negatively effected by blue light before going to sleep.
+
+<h2>Marketing Suggestions for Bellabeat</h2>
+* Bellabeat can create a podcast or blog that talks about healthy lifestyle and the importance of daily exercise.
+* They could have monthly incentives for meeting milestones for their users, such as free swag, or a discount towards one of their products.
+* They could send a monthly newsletter with tips on how to become more active and even include healthy recipes to encourage a healthier lifestyle.
+
+<h3> References </h3>
+
+* Data Source:  https://www.kaggle.com/code/leighhays/bellabeat-capstone-project/data?scriptVersionId=96701939
+* Articles:
