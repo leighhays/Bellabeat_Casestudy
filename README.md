@@ -1,7 +1,7 @@
 
 ![Unknown-2](https://user-images.githubusercontent.com/68507597/170092857-305d880f-ea2e-4774-bc8d-e6bee2b2bc5b.png)
 
-# Bellabeat Casestudy
+# Bellabeat Case Study 
 <h2>Google Data Analytics Capstone Project</h2>
 <h3>By:  Leigh Hays</h3>
 
