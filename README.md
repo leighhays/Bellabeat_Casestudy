@@ -485,7 +485,7 @@ After reviewing the data, I will present my recommendations on how Bellabeat can
 * There was a lot of sedentary time in this group, The CDC recommends 30 minutes of activity each day. That is why having a reminder on the device would help motivate users to stay more active.
 * It appears that many users were wearing the device in bed, but not asleep. This is most likely due to using their phone before going to bed. So, they might want to set screen time limitations, so their sleep is not negatively effected by blue light before going to sleep.
 
-<h2>Marketing Suggestions for Bellabeat</h2>
+<h2>Marketing Recommendations for Bellabeat</h2>
 
 * Bellabeat can create a podcast or blog that talks about healthy lifestyle and the importance of daily exercise.
 * They could have monthly incentives for meeting milestones for their users, such as free swag, or a discount towards one of their products.
